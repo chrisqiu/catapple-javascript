@@ -1,0 +1,26 @@
+#easy-as-pie-chart {
+	background-color: #ffffff;
+	border: 1px solid gray;
+	font: 10px sans-serif;
+	text-shadow: none;
+	height: 600px;
+	width: 800px;
+}
+#easy-as-pie-chart .total {
+	font-size: 18px;
+	font-weight: bold;
+}
+#easy-as-pie-chart .units {
+	fill: gray;
+	font-size: 13px;
+	text-decoration:underline;
+}
+#easy-as-pie-chart .label {
+	fill: #CCC;
+	font-size: 12px;
+	font-weight: bold;
+}
+#easy-as-pie-chart .value {
+	font-size: 13px;
+	font-weight: bold;
+}
