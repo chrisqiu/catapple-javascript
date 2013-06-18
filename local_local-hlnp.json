@@ -1,0 +1,135 @@
+{
+	"params": {
+		"numInstToThisNode": {
+			"node_BIOTA_ALGAE_CRUSTOSE_ECOR": 133,
+			"node_BIOTA_ALGAE_CANOPY": 836,
+			"node_BIOTA_ALGAE": 1588,
+			"node_BIOTA_ALGAE_CRUSTOSE_SOND": 79,
+			"node_BIOTA_ALGAE_ERECTBRANCHING": 37,
+			"node_BIOTA": 8772,
+			"node_PHYSICAL": 7665,
+			"node_BIOTA_BRYOZOA": 125,
+			"node_BIOTA_OTHER": 10,
+			"node_BIOTA_ALGAE_CANOPY_ECK": 798,
+			"node_BIOTA_ECHINODERMS": 67,
+			"node_BIOTA_CNIDARIA": 389,
+			"node_BIOTA_ALGAE_ERECTBRANCHING_BROWN": 12,
+			"node_BIOTA_SPONGES": 726,
+			"node_PHYSICAL_SOFT": 7626,
+			"RootNode": 16644,
+			"node_PHYSICAL_HARD": 39,
+			"node_BIOTA_ALGAE_CRUSTOSE": 212,
+			"node_BIOTA_ALGAE_CANOPY_OTHER": 38,
+			"node_BIOTA_ALGAE_ERECTBRANCHING_RED": 25
+		},
+		"confusionmatrix": [
+			[30]
+		],
+		"f1-score": 1.0,
+		"nKPsForThisNode": 30,
+		"report": "             precision    recall  f1-score   support\n\n          1       1.00      1.00      1.00     16644\n\navg / total       1.00      1.00      1.00     16644\n"
+	},
+	"name": "RootNode",
+	"children": [
+		{
+			"params": {
+				"numInstToThisNode": {
+					"node_BIOTA_ALGAE_CRUSTOSE_ECOR": 0,
+					"node_BIOTA_ALGAE_CANOPY": 1,
+					"node_BIOTA_ALGAE": 6,
+					"node_BIOTA_ALGAE_CRUSTOSE_SOND": 0,
+					"node_BIOTA_ALGAE_ERECTBRANCHING": 0,
+					"node_BIOTA": 0,
+					"node_PHYSICAL": 0,
+					"node_BIOTA_BRYOZOA": 0,
+					"node_BIOTA_OTHER": 2,
+					"node_BIOTA_ALGAE_CANOPY_ECK": 0,
+					"node_BIOTA_ECHINODERMS": 1,
+					"node_BIOTA_CNIDARIA": 12,
+					"node_BIOTA_ALGAE_ERECTBRANCHING_BROWN": 0,
+					"node_BIOTA_SPONGES": 53,
+					"node_PHYSICAL_SOFT": 0,
+					"RootNode": 549,
+					"node_PHYSICAL_HARD": 15,
+					"node_BIOTA_ALGAE_CRUSTOSE": 3,
+					"node_BIOTA_ALGAE_CANOPY_OTHER": 1,
+					"node_BIOTA_ALGAE_ERECTBRANCHING_RED": 0
+				},
+				"confusionmatrix": [
+					[15]
+				],
+				"f1-score": 0.5,
+				"nKPsForThisNode": 15,
+				"report": "             precision    recall  f1-score   support\n\n          0       0.87      0.86      0.86      8517\n          1       0.84      0.86      0.85      7384\n\navg / total       0.86      0.86      0.86     15901\n"
+			},
+			"name": "node_AAAA1",
+			"children": []
+		}, {
+			"params": {
+				"numInstToThisNode": {
+					"node_BIOTA_ALGAE_CRUSTOSE_ECOR": 129,
+					"node_BIOTA_ALGAE_CANOPY": 810,
+					"node_BIOTA_ALGAE": 1545,
+					"node_BIOTA_ALGAE_CRUSTOSE_SOND": 79,
+					"node_BIOTA_ALGAE_ERECTBRANCHING": 37,
+					"node_BIOTA": 7293,
+					"node_PHYSICAL": 1059,
+					"node_BIOTA_BRYOZOA": 123,
+					"node_BIOTA_OTHER": 8,
+					"node_BIOTA_ALGAE_CANOPY_ECK": 775,
+					"node_BIOTA_ECHINODERMS": 66,
+					"node_BIOTA_CNIDARIA": 365,
+					"node_BIOTA_ALGAE_ERECTBRANCHING_BROWN": 12,
+					"node_BIOTA_SPONGES": 652,
+					"node_PHYSICAL_SOFT": 1035,
+					"RootNode": 8352,
+					"node_PHYSICAL_HARD": 24,
+					"node_BIOTA_ALGAE_CRUSTOSE": 208,
+					"node_BIOTA_ALGAE_CANOPY_OTHER": 35,
+					"node_BIOTA_ALGAE_ERECTBRANCHING_RED": 25
+				},
+				"confusionmatrix": [
+					[10]
+				],
+				"f1-score": 0.3333,
+				"nKPsForThisNode": 10,
+				"report": "             precision    recall  f1-score   support\n\n          0       0.84      0.86      0.85      7384\n          1       0.87      0.86      0.86      8517\n\navg / total       0.86      0.86      0.86     15901\n"
+			},
+			"name": "node_AAAA2",
+			"children": []
+		}, {
+			"params": {
+				"numInstToThisNode": {
+					"node_BIOTA_ALGAE_CRUSTOSE_ECOR": 129,
+					"node_BIOTA_ALGAE_CANOPY": 810,
+					"node_BIOTA_ALGAE": 1545,
+					"node_BIOTA_ALGAE_CRUSTOSE_SOND": 79,
+					"node_BIOTA_ALGAE_ERECTBRANCHING": 37,
+					"node_BIOTA": 7293,
+					"node_PHYSICAL": 1059,
+					"node_BIOTA_BRYOZOA": 123,
+					"node_BIOTA_OTHER": 8,
+					"node_BIOTA_ALGAE_CANOPY_ECK": 775,
+					"node_BIOTA_ECHINODERMS": 66,
+					"node_BIOTA_CNIDARIA": 365,
+					"node_BIOTA_ALGAE_ERECTBRANCHING_BROWN": 12,
+					"node_BIOTA_SPONGES": 652,
+					"node_PHYSICAL_SOFT": 1035,
+					"RootNode": 8352,
+					"node_PHYSICAL_HARD": 24,
+					"node_BIOTA_ALGAE_CRUSTOSE": 208,
+					"node_BIOTA_ALGAE_CANOPY_OTHER": 35,
+					"node_BIOTA_ALGAE_ERECTBRANCHING_RED": 25
+				},
+				"confusionmatrix": [
+					[5]
+				],
+				"f1-score": 0.156,
+				"nKPsForThisNode": 5,
+				"report": "             precision    recall  f1-score   support\n\n          0       0.84      0.86      0.85      7384\n          1       0.87      0.86      0.86      8517\n\navg / total       0.86      0.86      0.86     15901\n"
+			},
+			"name": "node_AAAA3",
+			"children": []
+		}
+	]
+}

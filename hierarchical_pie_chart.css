@@ -1,0 +1,20 @@
+html {
+    font-family: Century Gothic, Arial, Helvetica;
+    font-size: 1em;
+}
+
+body {
+    padding: 10px;
+}
+
+#code_hierarchy {
+    position: relative;
+    width: 600px;
+    margin: 0 auto;
+}
+
+#code_hierarchy_legend {
+    height: 100px;
+    font-size: 1.4em;
+    text-align: center;
+}

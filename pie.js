@@ -1,9 +1,23 @@
-var h = 600;
-var w = 800;
-var r = 200;
+catapple_javascript_PieChart = function() {
+    var e = this.getElement();
+
+    this.onStateChange = function() {
+    	var width = this.getState().weight;
+    	var height = this.getState().height;
+    	var radius = this.getState().radius;
+        var data = this.getState().data;
+        var textOffset = this.getState().textOffset;
+        var tweenDuration = this.getState().tweenDuration;
+    };
+};
+
+var h = 800;
+var w = 1000;
+var r = 150;
 var ir = 0;
-var textOffset = 14;
-var tweenDuration = 500;
+var textOffset = 160;
+var tweenDuration = 300;
+var strokeColor = "red";
 
 // OBJECTS TO BE POPULATED WITH DATA LATER
 var lines, valueLabels, nameLabels;
@@ -30,11 +44,11 @@ var arc = d3.svg.arc().startAngle(function(d) {
 // GENERATE FAKE DATA /////////////////////////////////////
 // /////////////////////////////////////////////////////////
 
-var arrayRange = 100000;
 // range of potential values for each item
-var arraySize;
-var streakerDataAdded;
+var arrayRange = 100000;
 
+var arraySize = 15;
+var data = d3.range(arraySize).map(fillArray);
 function fillArray() {
     return {
         port : "操作系統" + Math.random(),
@@ -53,7 +67,7 @@ var arc_group = vis.append("svg:g").attr("class", "arc").attr("transform", "tran
 
 // GROUP FOR LABELS
 //var label_group = vis.append("svg:g").attr("class", "label_group").attr("transform", "translate(" + (w / 2) + "," + (h / 2) + ")");
-var label_group = vis.append("svg:g").attr("class", "label_group").attr("transform", "translate(" + (w / 2) + "," + (h / 2) + ")");
+var label_group = vis.append("svg:g").attr("class", "label_group").attr("transform", "translate(" + ((w / 2) - 0) + "," + ((h / 2) - 0) + ")");
 
 // GROUP FOR CENTER TEXT
 var center_group = vis.append("svg:g").attr("class", "center_group").attr("transform", "translate(" + (w / 2) + "," + (h / 2) + ")");
@@ -84,22 +98,17 @@ var totalValue = center_group.append("svg:text").attr("class", "total").attr("dy
 // STREAKER CONNECTION ////////////////////////////////////
 // /////////////////////////////////////////////////////////
 
-//var updateInterval = window.setInterval(update, 2000);
-var updateInterval = window.setTimeout(update, 500);
+window.setTimeout(update, 500, data);
 
-// to run each time data is generated
-function update() {
-    arraySize = Math.ceil(Math.random() * 10);
-    streakerDataAdded = d3.range(arraySize).map(fillArray);
-
+function update(data) {
     oldPieData = filteredPieData;
-    pieData = donut(streakerDataAdded);
+    pieData = donut(data);
 
     var totalOctets = 0;
     filteredPieData = pieData.filter(filterData);
     function filterData(element, index, array) {
-        element.name = streakerDataAdded[index].port;
-        element.value = streakerDataAdded[index].octetTotalCount;
+        element.name = data[index].port;
+        element.value = data[index].octetTotalCount;
         totalOctets += element.value;
         return (element.value > 0);
     }
@@ -112,7 +121,7 @@ function update() {
             return null;
 //            var kb = totalOctets / 1024;
 //            return kb.toFixed(1);
-            // return bchart.label.abbreviated(totalOctets*8);
+            // return bchart.label.abbreviated(totalOctets * 8);
         });
 
         // DRAW ARC PATHS
@@ -127,8 +136,8 @@ function update() {
         lines = label_group.selectAll("line").data(filteredPieData);
         lines.enter().append("svg:line")
         	.attr("x1", 0).attr("x2", 0)
-        	.attr("y1", -r - 3).attr("y2", -r - 8)
-        	.attr("stroke", "red")
+        	.attr("y1", -r - 150).attr("y2", -r - 8)
+        	.attr("stroke", strokeColor)
         	.attr("transform", function(d) {
         		return "rotate(" + (d.startAngle + d.endAngle) / 2 * (180 / Math.PI) + ")";
         	});

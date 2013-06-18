@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        .nodebox {
+            fill: #fff;
+            stroke: steelblue;
+            stroke-width: 3.5px;
+        }
+
+        #node_PHYSICAL                  .nodebox {
+            stroke: beige;
+        }
+        #node_PHYSICAL_HARD             .nodebox {
+            stroke: tan;
+        }
+        #node_PHYSICAL_SOFT             .nodebox {
+            stroke: yellow;
+        }
+
+        #node_BIOTA                     .nodebox {
+            stroke: darkgreen;
+        }
+        #node_BIOTA_SPONGES             .nodebox {
+            stroke: orange;
+        }
+        #node_BIOTA_ALGAE               .nodebox {
+            stroke: green;
+        }
+        #node_BIOTA_ALGAE_CANOPY_ECK    .nodebox {
+            stroke: lightgreen;
+        }
+        #node_BIOTA_ALGAE_CRUSTOSE      .nodebox {
+            stroke: purple;
+        }
+
+        .nodeTitle {
+            fill: orange;
+            font: 15px sans-serif;
+            font-weight: bold;
+        }
+
+        .nodeText {
+            font: 15px sans-serif;
+        }
+
+        .link {
+            fill: none;
+            stroke: #ccc;
+            stroke-width: 3.5px;
+        }
+    </style>
+</head>
+<body>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="dependency.js"></script>
+</body>
