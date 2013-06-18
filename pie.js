@@ -13,7 +13,7 @@ catapple_javascript_PieChart = function() {
 
 var h = 800;
 var w = 1000;
-var r = 150;
+var r = 100;
 var ir = 0;
 var textOffset = 160;
 var tweenDuration = 300;
@@ -225,6 +225,26 @@ function update(data) {
         nameLabels.transition().duration(tweenDuration).attrTween("transform", textTween);
 
         nameLabels.exit().remove();
+
+        // add legend
+        var color_hash = {
+            0 : ["apple", "green"],
+            1 : ["mango", "orange"],
+            2 : ["cherry", "red"],
+            3 : ["cherry", "black"],
+            4 : ["cherry", "blue"],
+            5 : ["cherry", "gray"],
+            6 : ["cherry", "magenta"],
+            7 : ["cherry", "pink"],
+            8 : ["cherry", "brown"],
+            9 : ["cherry", "silver"]
+        };
+        var legend = vis.append("g").attr("class", "legend").attr("x", 65).attr("y", h - 90).attr("height", 100).attr("width", 100);
+        legend.selectAll('g').data(pieData).enter().append('g').each(function(d, i) {
+            var g = d3.select(this);
+            g.append("rect").attr("x", 50).attr("y", (h - i * 20) + 20).attr("width", 10).attr("height", 10).style("fill", color_hash[String(i)][1]);
+            g.append("text").attr("x", 65).attr("y", (h - i * 20) + 28).attr("height", 30).attr("width", 100).style("fill", color_hash[String(i)][1]).text(color_hash[String(i)][0]);
+        });
 //    }
 }
 
