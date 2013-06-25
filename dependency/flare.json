@@ -1,0 +1,82 @@
+{
+    "name": "flare",
+    "children": [
+        {
+            "name": "analytics",
+            "children": [
+                {
+                    "name": "graph",
+                    "children": [
+                        {
+                            "name": "BetweennessCentrality",
+                            "size": 3534
+                        }, {
+                            "name": "ShortestPaths",
+                            "size": 5914
+                        }, {
+                            "name": "SpanningTree",
+                            "size": 3416
+                        }
+                    ]
+                }, {
+                    "name": "optimization",
+                    "children": [
+                        {
+                            "name": "AspectRatioBanker",
+                            "size": 7074
+                        }
+                    ]
+                }
+            ]
+        }, {
+            "name": "animate",
+            "children": [
+                {
+                    "name": "Easing",
+                    "size": 17010
+                }, {
+                    "name": "FunctionSequence",
+                    "size": 5842
+                }
+            ]
+        }, {
+            "name": "data",
+            "children": [
+                {
+                    "name": "DataUtil",
+                    "size": 3322
+                }
+            ]
+        }, {
+            "name": "display",
+            "children": [
+                {
+                    "name": "DirtySprite",
+                    "size": 8833
+                }, {
+                    "name": "TextSprite",
+                    "size": 10066
+                }
+            ]
+        }, {
+            "name": "flex",
+            "children": [
+                {
+                    "name": "FlareVis",
+                    "size": 4116
+                }
+            ]
+        }, {
+            "name": "physics",
+            "children": [
+                {
+                    "name": "DragForce",
+                    "size": 1082
+                }, {
+                    "name": "SpringForce",
+                    "size": 1681
+                }
+            ]
+        }
+    ]
+}
