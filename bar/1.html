@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bar Chart</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <script type="text/javascript" src="../d3.v3.js"></script>
+        <style type="text/css">
+            body {
+                font: 10px sans-serif;
+            }
+
+            .bar rect {
+                fill: rgba(255, 127, 80, 0.6);
+                stroke: coral;
+                stroke-width: 2;
+            }
+            
+            .bar rect:hover {
+                fill: rgba(255, 127, 80, 1);
+            }
+
+            .bar text.value {
+                fill: goldenrod;
+                font-size: 15px;
+                font-weight: bold;
+            }
+
+            .bar text.codetype3 {
+                fill: olive;
+            }
+
+            .bar text.summary {
+                fill: slateblue;
+            }
+
+            .axis {
+                shape-rendering: crispEdges;
+            }
+
+            .axis path {
+                fill: none;
+            }
+
+            .x.axis line {
+                stroke: #fff;
+                stroke-opacity: .8;
+            }
+
+            .y.axis path {
+                stroke: black;
+            }
+        </style>
+    </head>
+    <body>
+        <script type="text/javascript" src="1.js"></script>
+    </body>
+</html>
