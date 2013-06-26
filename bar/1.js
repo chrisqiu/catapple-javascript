@@ -7,7 +7,7 @@
     // var y = d3.scale.ordinal().rangeRoundBands([0, h], .1);
     // var xAxis = d3.svg.axis().scale(x).orient("top").tickSize(-h);
     // var yAxis = d3.svg.axis().scale(y).orient("left").tickSize(0);
-    
+
     var m = [30, 90, 100, 50];
     var w = 1000 - m[1] - m[3];
     var h = 1500 - m[0] - m[2];
@@ -59,20 +59,20 @@
         });
 
         bar.append("text")
-        .attr("class", "codetype3")
+        .attr("class", "keyword")
         .attr("x", 0)
         .attr("y", y.rangeBand() / 2)
         .attr("dx", 3)
-        .attr("dy", "4.5em")
+        .attr("dy", "3em")
         .attr("text-anchor", "start")
-        .text("codetype3");
-        
+        .text("keyword");
+
         bar.append("text")
         .attr("class", "summary")
         .attr("x", 0)
         .attr("y", y.rangeBand() / 2)
         .attr("dx", 3)
-        .attr("dy", "3em")
+        .attr("dy", "4.5em")
         .attr("text-anchor", "start")
         .text("summary");
 
