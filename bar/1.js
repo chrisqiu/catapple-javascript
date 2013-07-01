@@ -18,6 +18,12 @@
     var yAxis = d3.svg.axis().scale(y).orient("left").tickSize(0);
 
     var svg = d3.select("body").append("svg").attr("width", w + m[1] + m[3]).attr("height", h + m[0] + m[2]).append("g").attr("transform", "translate(" + m[3] + "," + m[0] + ")");
+
+    var filter = svg.append("svg:defs").append("svg:filter").attr("id", "blur");
+    filter.append("feOffset").attr("in", "SourceAlpha").attr("dx", 1).attr("dy", 1).attr("result", "offOut");
+    filter.append("feGaussianBlur").attr("stdDeviation", 1).attr("in", "offOut").attr("result", "blurOut");
+    filter.append("feBlend").attr("in", "SourceGraphic").attr("in2", "blurOut").attr("mode", "lighten");
+
     d3.csv("sample-data.csv", function(data) {
         // Parse numbers, and sort by value.
         data.forEach(function(d) {
@@ -35,6 +41,8 @@
             return d.name;
         }));
 
+        svg.append("g").attr("class", "x axis").call(xAxis);
+
         var bar = svg.selectAll("g.bar").data(data).enter().append("g").attr("class", "bar").attr("transform", function(d) {
             return "translate(0," + y(d.name) + ")";
         });
@@ -43,7 +51,7 @@
         .attr("width", function(d) {
             return x(d.value);
         })
-        .attr("height", y.rangeBand());
+        .attr("height", y.rangeBand()).attr("filter", "url(#blur)");
 
         bar.append("text")
         .attr("class", "value")
@@ -51,7 +59,7 @@
             return x(d.value);
         })
         .attr("y", y.rangeBand() / 2)
-        .attr("dx", 3)
+        .attr("dx", 10)
         .attr("dy", ".35em")
         .attr("text-anchor", "start")
         .text(function(d) {
@@ -63,7 +71,7 @@
         .attr("x", 0)
         .attr("y", y.rangeBand() / 2)
         .attr("dx", 3)
-        .attr("dy", "3em")
+        .attr("dy", "4em")
         .attr("text-anchor", "start")
         .text("keyword");
 
@@ -72,11 +80,11 @@
         .attr("x", 0)
         .attr("y", y.rangeBand() / 2)
         .attr("dx", 3)
-        .attr("dy", "4.5em")
+        .attr("dy", "5.5em")
         .attr("text-anchor", "start")
         .text("summary");
 
-        svg.append("g").attr("class", "x axis").call(xAxis);
+
         svg.append("g").attr("class", "y axis").call(yAxis);
     });
 })();
