@@ -41,17 +41,24 @@
             return d.name;
         }));
 
-        svg.append("g").attr("class", "x axis").call(xAxis);
+        svg.append("g").attr("class", "x axis")
+        .transition()
+        .attr("opacity", 1)
+        .delay(500).duration(2000)
+        .call(xAxis);
 
         var bar = svg.selectAll("g.bar").data(data).enter().append("g").attr("class", "bar").attr("transform", function(d) {
             return "translate(0," + y(d.name) + ")";
         });
 
         bar.append("rect")
+        .attr("width", 0)
+        .attr("height", y.rangeBand())
+        .attr("filter", "url(#blur)")
+        .transition().duration(800).ease("easeInQuint")
         .attr("width", function(d) {
             return x(d.value);
-        })
-        .attr("height", y.rangeBand()).attr("filter", "url(#blur)");
+        }).attr("height", y.rangeBand());
 
         bar.append("text")
         .attr("class", "value")
@@ -64,7 +71,9 @@
         .attr("text-anchor", "start")
         .text(function(d) {
             return format(d.value);
-        });
+        })
+        .style("opacity", 0)
+        .transition().style("opacity", 1).delay(500).duration(1000);
 
         bar.append("text")
         .attr("class", "keyword")
@@ -85,6 +94,10 @@
         .text("summary");
 
 
-        svg.append("g").attr("class", "y axis").call(yAxis);
+        svg.append("g").attr("class", "y axis")
+        // .transition()
+        // .attr("x", 0).attr("y", 0)
+        // .delay(0).duration(1500)
+        .call(yAxis);
     });
 })();
